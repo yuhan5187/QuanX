@@ -255,7 +255,7 @@ obj = {
       date: "2023-08-10",
     },
   ],
-  total_income: 123123,
+  total_income: 1000000,
   week_cycle_ratio: -0.989773344,
   yesterday_income: 245,
   yesterday_overview: {
