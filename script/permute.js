@@ -15,7 +15,7 @@ obj = {
     },
     trial: {
       text: "Thanks for downloading a trial of Permute 3! We hope you enjoy it.",
-      duration: 7,
+      duration: 999,
     },
     payment_url: "https://pay.paddle.com/checkout/framework/544716",
     image:
