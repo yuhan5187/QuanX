@@ -6,8 +6,6 @@
  *Url[https://api.meiyan.com/iap/verify.json]
  */
 
-var obj = JSON.parse($response.body);
-
 let days = [57843, 53541, 87593, 98634, 120543, 86943, 75934];
 let sum = days.reduce(
   (accumulator, currentValue) => accumulator + currentValue,
@@ -28,6 +26,8 @@ function getIncomePercentage(index) {
       return 0;
   }
 }
+var obj = JSON.parse($response.body);
+
 for (let i = 0; i < days.length; i++) {
   obj["overview_list"][i]["daily_income"] = days[i];
 }
