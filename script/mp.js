@@ -53,7 +53,8 @@ const overviewList = obj["yesterday_overview"]["ads_stat"];
 overviewList.forEach((stat, index) => {
   stat["req_succ_count"] = laqu * (0.1 + Math.random() * (0.8 - 0.1));
   stat["exposure_count"] = laqu * (0.01 + Math.random() * (0.05 - 0.01));
-  stat["click_count"] = dianji * (0.1 + Math.random() * (0.7 - 0.1));
+  stat["click_count"] =
+    stat["exposure_count"] * (0.01 + Math.random() * (0.04 - 0.01));
   stat["income"] = days[6] * getIncomePercentage(index);
 });
 obj["yesterday_overview"]["ads_stat"] = overviewList;
