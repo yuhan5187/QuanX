@@ -20,9 +20,9 @@ let dianji = laqu * (min + Math.random() * (max - min));
 function getIncomePercentage(index) {
   switch (index) {
     case 0:
-      return 0.7;
+      return 0.6;
     case 1:
-      return 0.03;
+      return 0.13;
     case 2:
       return 0.07;
     case 3:
