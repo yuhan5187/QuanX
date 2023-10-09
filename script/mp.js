@@ -12,6 +12,11 @@ let sum = days.reduce(
   0
 );
 
+let laqu = days[6] * 3;
+let min = 0.0001;
+let max = 0.0004;
+let dianji = laqu * (min + Math.random() * (max - min));
+
 function getIncomePercentage(index) {
   switch (index) {
     case 0:
@@ -42,5 +47,28 @@ for (let i = 0; i < obj["overview_list"].length; i++) {
 obj["total_income"] = 70000000 + sum;
 obj["yesterday_income"] = days[6];
 obj["last_week_income"] = sum;
+
+const overviewList = obj["overview_list"][6]["ads_stat"];
+
+overviewList.forEach((stat, index) => {
+  stat["req_succ_count"] = laqu * (0.1 + Math.random() * (0.7 - 0.1));
+  stat["exposure_count"] = dianji * (0.1 + Math.random() * (0.7 - 0.1));
+});
+obj["overview_list"][6]["ads_stat"] = overviewList;
+
+// obj["overview_list"][6]["ads_stat"][0]["req_succ_count"] = laqu;
+// obj["overview_list"][6]["ads_stat"][0]["exposure_count"] = dianji;
+// obj["overview_list"][6]["ads_stat"][1]["req_succ_count"] =
+//   laqu * (0.1 + Math.random() * (0.7 - 0.1));
+// obj["overview_list"][6]["ads_stat"][1]["exposure_count"] =
+//   dianji * (0.1 + Math.random() * (0.7 - 0.1));
+// obj["overview_list"][6]["ads_stat"][2]["req_succ_count"] =
+//   laqu * (0.1 + Math.random() * (0.7 - 0.1));
+// obj["overview_list"][6]["ads_stat"][2]["exposure_count"] =
+//   dianji * (0.1 + Math.random() * (0.7 - 0.1));
+// obj["overview_list"][6]["ads_stat"][3]["req_succ_count"] =
+//   laqu * (0.1 + Math.random() * (0.7 - 0.1));
+// obj["overview_list"][6]["ads_stat"][3]["exposure_count"] =
+//   dianji * (0.1 + Math.random() * (0.7 - 0.1));
 
 $done({ body: JSON.stringify(obj) });
