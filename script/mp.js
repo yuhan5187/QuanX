@@ -6,19 +6,28 @@
  *Url[https://api.meiyan.com/iap/verify.json]
  */
 
+let days = [57843, 53541, 87593, 98634, 120543, 86943, 75934];
+let sum = days.reduce(
+  (accumulator, currentValue) => accumulator + currentValue,
+  0
+);
+for (let i = 0; i < days.length; i++) {
+  obj["overview_list"][i]["daily_income"] = days[i];
+}
+
 var obj = JSON.parse($response.body);
 
-obj["total_income"] = 99999999999;
-obj["yesterday_income"] = 99999;
-obj["last_week_income"] = 999999;
+obj["total_income"] = 70000000 + sum;
+obj["yesterday_income"] = dyas[6];
+obj["last_week_income"] = sum;
 
-obj["overview_list"][0]["daily_income"] = 31248;
-obj["overview_list"][1]["daily_income"] = 32134;
-obj["overview_list"][2]["daily_income"] = 25966;
-obj["overview_list"][3]["daily_income"] = 23145;
-obj["overview_list"][4]["daily_income"] = 25966;
-obj["overview_list"][5]["daily_income"] = 41453;
-obj["overview_list"][6]["daily_income"] = 98773;
+// obj["overview_list"][0]["daily_income"] = day1;
+// obj["overview_list"][1]["daily_income"] = day2;
+// obj["overview_list"][2]["daily_income"] = day3;
+// obj["overview_list"][3]["daily_income"] = day4;
+// obj["overview_list"][4]["daily_income"] = day5;
+// obj["overview_list"][5]["daily_income"] = day6;
+// obj["overview_list"][6]["daily_income"] = day7;
 
 obj["overview_list"][1]["ads_stat"][0]["income"] = 20314;
 obj["overview_list"][1]["ads_stat"][1]["income"] = 20314;
