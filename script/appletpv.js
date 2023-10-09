@@ -59,6 +59,6 @@ var obj = JSON.parse($response.body);
 // };
 obj["data"][0]["indexValue"] = 25244;
 obj["data"][1]["indexValue"] = 123297;
-obj["data"][1]["indexValue"] = 6216;
-obj["data"][1]["indexValue"] = 529;
+obj["data"][2]["indexValue"] = 6216;
+obj["data"][3]["indexValue"] = 529;
 $done({ body: JSON.stringify(obj) });
