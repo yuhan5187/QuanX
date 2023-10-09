@@ -40,8 +40,8 @@ for (let i = 0; i < obj["overview_list"].length; i++) {
   }
 }
 
-obj["total_income"] = 70000000;
-obj["yesterday_income"] = dyas[6];
+obj["total_income"] = 70000000 + sum;
+obj["yesterday_income"] = days[6];
 obj["last_week_income"] = sum;
 
 $done({ body: JSON.stringify(obj) });
