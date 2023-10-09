@@ -12,7 +12,7 @@ let sum = days.reduce(
   0
 );
 
-let laqu = days[6] * 3;
+let laqu = days[6] * 2;
 let min = 0.01;
 let max = 0.04;
 let dianji = laqu * (min + Math.random() * (max - min));
@@ -51,7 +51,7 @@ obj["last_week_income"] = sum;
 const overviewList = obj["yesterday_overview"]["ads_stat"];
 
 overviewList.forEach((stat, index) => {
-  stat["req_succ_count"] = laqu * (0.1 + Math.random() * (0.7 - 0.1));
+  stat["req_succ_count"] = laqu * (0.1 + Math.random() * (0.8 - 0.1));
   stat["exposure_count"] = laqu * (0.1 + Math.random() * (0.1 - 0.07));
   stat["click_count"] = dianji * (0.1 + Math.random() * (0.7 - 0.1));
   stat["income"] = days[6] * getIncomePercentage(index);
