@@ -48,13 +48,13 @@ obj["total_income"] = 70000000 + sum;
 obj["yesterday_income"] = days[6];
 obj["last_week_income"] = sum;
 
-const overviewList = obj["overview_list"][6]["ads_stat"];
+const overviewList = obj["yesterday_overview"][0]["ads_stat"];
 
 overviewList.forEach((stat, index) => {
   stat["req_succ_count"] = laqu * (0.1 + Math.random() * (0.7 - 0.1));
   stat["exposure_count"] = dianji * (0.1 + Math.random() * (0.7 - 0.1));
 });
-obj["overview_list"][6]["ads_stat"] = overviewList;
+obj["yesterday_overview"][0]["ads_stat"] = overviewList;
 
 // obj["overview_list"][6]["ads_stat"][0]["req_succ_count"] = laqu;
 // obj["overview_list"][6]["ads_stat"][0]["exposure_count"] = dianji;
