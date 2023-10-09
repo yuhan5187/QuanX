@@ -13,8 +13,8 @@ let sum = days.reduce(
 );
 
 let laqu = days[6] * 3;
-let min = 0.0001;
-let max = 0.0004;
+let min = 0.01;
+let max = 0.04;
 let dianji = laqu * (min + Math.random() * (max - min));
 
 function getIncomePercentage(index) {
