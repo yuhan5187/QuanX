@@ -11,9 +11,6 @@ let sum = days.reduce(
   (accumulator, currentValue) => accumulator + currentValue,
   0
 );
-for (let i = 0; i < days.length; i++) {
-  obj["overview_list"][i]["daily_income"] = days[i];
-}
 
 var obj = JSON.parse($response.body);
 
@@ -21,19 +18,30 @@ obj["total_income"] = 70000000 + sum;
 obj["yesterday_income"] = dyas[6];
 obj["last_week_income"] = sum;
 
-// obj["overview_list"][0]["daily_income"] = day1;
-// obj["overview_list"][1]["daily_income"] = day2;
-// obj["overview_list"][2]["daily_income"] = day3;
-// obj["overview_list"][3]["daily_income"] = day4;
-// obj["overview_list"][4]["daily_income"] = day5;
-// obj["overview_list"][5]["daily_income"] = day6;
-// obj["overview_list"][6]["daily_income"] = day7;
+for (let i = 0; i < days.length; i++) {
+  obj["overview_list"][i]["daily_income"] = days[i];
+}
 
-obj["overview_list"][1]["ads_stat"][0]["income"] = 20314;
-obj["overview_list"][1]["ads_stat"][1]["income"] = 20314;
-obj["overview_list"][1]["ads_stat"][2]["income"] = 20314;
-obj["overview_list"][1]["ads_stat"][3]["income"] = 20314;
-// obj["overview_list"][1]["ads_stat"][4]["income"] = 20314;
+for (let i = 0; i < obj["overview_list"].length; i++) {
+  for (let j = 0; j < obj["overview_list"][i]["ads_stat"].length; j++) {
+    obj["overview_list"][i]["ads_stat"][j]["income"] =
+      days[i] * getIncomePercentage(j);
+  }
+}
+function getIncomePercentage(index) {
+  switch (index) {
+    case 0:
+      return 0.7;
+    case 1:
+      return 0.03;
+    case 2:
+      return 0.07;
+    case 3:
+      return 0.2;
+    default:
+      return 0;
+  }
+}
 
 // obj ={
 //     "base_resp": {
