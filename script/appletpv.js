@@ -270,9 +270,33 @@ var obj = JSON.parse($response.body);
 //   __rpcCount: 11,
 // };
 
-obj["data"][0]["objects"]["tableValueLine"][0]["columnValue"][0] = 25244;
-obj["data"][1]["objects"]["tableValueLine"][0]["columnValue"][0] = 123297;
-obj["data"][2]["objects"]["tableValueLine"][0]["columnValue"][0] = 6216;
-obj["data"][3]["objects"]["tableValueLine"][0]["columnValue"][0] = 529;
+obj["data"][0]["objects"]["tableValueLine"][0]["columnValue"] = [
+  "25248",
+  "0.0004",
+  "0.0015",
+  "0.0354",
+  "",
+];
+obj["data"][1]["objects"]["tableValueLine"][0]["columnValue"] = [
+  "123297",
+  "0.0003",
+  "0.0022",
+  "0.0054",
+  "",
+];
+obj["data"][2]["objects"]["tableValueLine"][0]["columnValue"] = [
+  "6216",
+  "0.0005",
+  "0.0016",
+  "0.0034",
+  "",
+];
+obj["data"][3]["objects"]["tableValueLine"][0]["columnValue"] = [
+  "529",
+  "0.0084",
+  "0.0076",
+  "0.0014",
+  "",
+];
 
 $done({ body: JSON.stringify(obj) });
