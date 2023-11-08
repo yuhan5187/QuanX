@@ -30,6 +30,7 @@ let data = {
 };
 var obj = JSON.parse($response.body);
 
+obj.total_income = data.total_income;
 obj.total_programmatic_ad_income = data.total_programmatic_ad_income;
 obj.yesterday_income = data.yesterday_income;
 
