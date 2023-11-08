@@ -16,6 +16,7 @@
 //   total_cps_income: 0,
 // };
 let data = {
+  total_income: 213123123,
   total_programmatic_ad_income: 213123123,
   yesterday_income: 3123113,
 };
